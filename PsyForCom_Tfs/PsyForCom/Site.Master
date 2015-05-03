@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PsyForCom.SiteMaster"  %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+   
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - פסיכולוגים למען הקהילה</title>
+
+    <asp:PlaceHolder ID="head" runat="server" >
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body >
+    <form runat="server" dir="rtl" >
+        <div class="ContentDiv">
+           <div class="1" style="margin-left:auto;margin-right:auto; background-color:#002A52;width:1000px;height: 91px;margin-top:-40px">
+             <table>
+                 
+                   <tr>
+                       <td>
+                         <a href="http://portal.idc.ac.il/He/Main/homepage/Pages/homepage.aspx">
+                             <img src="Content/logo.gif" runat="server"/>
+                         </a>
+                     </td>
+                 </tr>
+             </table>
+           </div>
+       
+        <div class="Menubar" style="margin-left:auto;margin-right:auto;width:1000px;background-color:#587992;border:1px solid #fcfcfc;"  >
+            <div class="container" >
+                    <div class="navbar-collapse collapse" style="text-align: right;float:right !important;">
+
+                    <ul class="nav navbar-nav"  >               			
+                                                               
+                        <% if (HttpContext.Current.User.IsInRole("Psychologist"))
+                           { %>
+                         <li style="font:#e7e7e7" ><a runat="server" href="/PsyPages/PsyUpdate.aspx"  >עדכון פרטים</a></li> 
+                        <%} %>
+                        <li ><a runat="server" href="~/Contact"  >צור קשר</a></li> 
+                        <li><a runat="server" href="http://portal.idc.ac.il/he/schools/psychology/homepage/pages/homepage.aspx">בית הספר לפסיכולוגיה בבינתחומי</a></li>
+                        <li><a runat="server" >ארועים</a></li>
+                        <li><a runat="server" href="~/PsyBenefits">הטבות לפסיכולוגים</a></li>
+                        <li><a runat="server" href="~/Account/Login">רשימת פסיכולוגים</a></li>
+                        <li ><a runat="server" href="~/" >עמוד הבית</a></li> 
+                        
+                    </ul>
+                     
+                </div>
+            </div>
+        </div>
+           
+        
+       
+		<table class="s4-wpTopTable" border="0" >
+            <tbody>
+	<tr>
+		<td  style="direction:rtl;">
+            <div  id="WebPartWPQ2"class="ms-WPBody"style="" >
+                <table border="0" style="width:100%;">
+		</table>
+                
+            <table border="0" style="margin-left:auto;margin-right:auto;width:1000px" id="table_SchoolTitle" >
+                <tbody>
+			<tr>
+				<td class="school_newTitle" colSpan="2" >
+                    
+                        <h1 style="align-content:center" >פסיכולוגים  למען הקהילה</h1>
+                        <asp:LoginView ID="LoginView1" runat="server"  >
+                            <AnonymousTemplate>
+                                אינך מחובר למערכת, על מנת להתחבר אנא לחץ על כפתור התחברות
+                            </AnonymousTemplate> 
+                            <LoggedInTemplate>
+                                ברוך הבא, הינך מחובר
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut"  LogoutPageUrl="~/Default.aspx"  />
+                        <asp:LoginName ID="LoginName1" runat="server"  />
+                    
+				</td>
+			</tr>
+              </tbody>
+		</table>
+                       
+            </div>
+		</td>
+	</tr>
+                </tbody>
+</table>
+             <div >
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer style="margin-left:auto;margin-right:auto;width:1000px;margin-top:30px">
+                <p dir="rtl">&copy; <%: DateTime.Now.Year %> -  כל הזכויות שמורות למרכז הבינתחומי הרצליה.</p>
+            </footer>
+             </div>
+    </form >
+    
+</body>
+</html>
