@@ -1,0 +1,36 @@
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+
+.col-md-4 {
+    float: right;
+    width: 25%;
+    height: 310px;
+    display: inline-block;
+    padding-bottom: inherit;
+    margin-bottom: inherit;
+}
+
+.btn btn-default {
+    position: absolute;
+    bottom: 0;
+}
+
+.col-md-3 {
+    float: right;
+    width: 50%;
+    height: 310px;
+    display: inline-block;
+    padding-bottom: inherit;
+    margin-bottom: auto;
+}
+.GridView {
+    width: 100%; 
+    word-wrap:break-word;
+    table-layout: fixed;
+}
+.btn btn-default2 {
+    border-color: #CCC;
+    color:black;
+}
