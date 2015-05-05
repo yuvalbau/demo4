@@ -14,7 +14,7 @@ namespace ShapesApp
         private double _base; 
         #endregion
 
-
+        //comment
         //ctor
         public Triangle(double h, double b)
         {
