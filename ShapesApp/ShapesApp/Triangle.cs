@@ -9,9 +9,13 @@ namespace ShapesApp
 {
     class Triangle :Shape
     {
+        #region Vars
         private double _height;
-        private double _base;
+        private double _base; 
+        #endregion
 
+
+        //ctor
         public Triangle(double h, double b)
         {
             Height = h;

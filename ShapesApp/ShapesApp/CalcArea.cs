@@ -14,10 +14,7 @@ namespace ShapesApp
        private  static bool loadObject=false; 
        private static void Main(string[] args)
        {
-           
-        
-           
-           
+                     
            while (i != 111)
            {
 
